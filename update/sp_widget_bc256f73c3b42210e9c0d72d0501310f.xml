@@ -10,6 +10,15 @@
 		$rootScope.noteID = id;
 		$rootScope.$emit('selectNote', id);
 	}
+	
+		$rootScope.$on('updateNote', function (event,data) {
+				if ($rootScope.noteID != ''){
+					console.log('event wird getriggert');
+					item.note = $rootScope.note;
+					item.title = $rootScope.title;
+				}
+	});
+	
 }]]></client_script>
         <controller_as>c</controller_as>
         <css/>
@@ -45,21 +54,20 @@
 		data.notes.push(noteObj);
 	}
 	
-	
 }());]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-04-16 11:55:24</sys_created_on>
         <sys_id>bc256f73c3b42210e9c0d72d0501310f</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>Notes List</sys_name>
         <sys_package display_value="CreateNotes" source="x_snc_createnotes">df5fd9a5090232007f44e1046c8ff69f</sys_package>
         <sys_policy/>
         <sys_scope display_value="CreateNotes">df5fd9a5090232007f44e1046c8ff69f</sys_scope>
         <sys_update_name>sp_widget_bc256f73c3b42210e9c0d72d0501310f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-04-16 13:19:55</sys_updated_on>
+        <sys_updated_on>2025-04-17 08:03:51</sys_updated_on>
         <template><![CDATA[<div class="panel panel-default">
   <div class="panel-heading clearfix">
     <h3 class="panel-title pull-left">
